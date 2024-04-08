@@ -21,7 +21,7 @@ $app = require __DIR__ . '/../config/routes.php';
 $app->addErrorMiddleware(false, false, false);
 
 $handler = (new StackHandler())
-                ->add(new SlimToOpenSnowoole($app));
+                ->add(new SlimToOpenSwoole($app));
 
 $server->setHandler($handler);
 
