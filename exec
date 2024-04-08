@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker compose exec -u 1000:1000 -w /var/www swoole_server $@

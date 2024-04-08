@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  swoole_server:
+    image: openswoole/swoole:php8.3-dev
+    volumes:
+      - .:/var/www
+      - ./docker-autoreload/swoole.conf:/etc/supervisor/service.d/swoole.conf
+    environment:
+      AUTORELOAD_PROGRAMS: "swoole"
+      AUTORELOAD_ANY_FILES: 0
+    ports:
+      - "8080:80"

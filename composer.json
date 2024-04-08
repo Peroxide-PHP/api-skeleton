@@ -1,0 +1,35 @@
+{
+    "name": "peroxide/api-skeleton",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Application\\": "app/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leonardo Tumadjian"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "slim/slim": "^4.13",
+        "openswoole/core": "22.1.4",
+        "peroxide/container": "^1.1"
+    },
+    "require-dev": {
+        "openswoole/ide-helper": "^22.1",
+        "phpunit/phpunit": "^11.1",
+        "phpstan/phpstan": "^1.10",
+        "squizlabs/php_codesniffer": "^3.9",
+        "phpmd/phpmd": "^2.15"
+    },
+    "scripts": {
+        "test": "phpunit",
+        "stan": "phpstan",
+        "fix": "phpcbf -p --standard=PSR12 app/",
+        "sniff": "phpcs --standard=PSR12 app/",
+        "md": "phpmd app/ text cleancode,codesize,controversial,design,naming,unusedcode"
+    }
+}
