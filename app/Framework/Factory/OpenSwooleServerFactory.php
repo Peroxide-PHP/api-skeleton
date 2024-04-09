@@ -12,7 +12,6 @@ class OpenSwooleServerFactory
 
         $server->set([
             'worker_num' => 4,      // The number of worker processes to start
-            'task_worker_num' => 4  // The amount of task workers to start
         ]);
 
         return $server;
