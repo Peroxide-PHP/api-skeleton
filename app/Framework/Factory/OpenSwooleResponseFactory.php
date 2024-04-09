@@ -1,6 +1,6 @@
 <?php
 
-namespace Application\Framework\PSRFactory;
+namespace Application\Framework\Factory;
 
 use OpenSwoole\Core\Psr\Response;
 use Psr\Http\Message\ResponseFactoryInterface;
