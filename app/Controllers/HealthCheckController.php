@@ -2,14 +2,16 @@
 
 namespace Application\Controllers;
 
-use Peroxide\DependencyInjection\Container;
+use Application\Framework\Factory\OpenSwooleResponseFactory;
+use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 class HealthCheckController
 {
     public function __construct(
-        protected readonly Container $container
+        protected readonly ContainerInterface $container
     ) {
     }
 
@@ -19,8 +21,8 @@ class HealthCheckController
          * @var ResponseFactoryInterface $responseFactory
          */
         $responseFactory = $this->container->get(ResponseFactoryInterface::class);
-
         $response = $responseFactory->createResponse();
+
         $response->getBody()->write('Health checked!');
 
         return $response;
