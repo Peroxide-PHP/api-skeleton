@@ -1,7 +1,10 @@
 version: "3.8"
 services:
   swoole_server:
-    image: openswoole/swoole:php8.3-dev
+    #image: openswoole/swoole:php8.3-dev
+    build:
+      context: builds
+      dockerfile: ./dev.Dockerfile
     volumes:
       - .:/var/www
       - ./docker-autoreload/swoole.conf:/etc/supervisor/service.d/swoole.conf
@@ -14,17 +17,17 @@ services:
       - .env
 
 # Database suggested settings
-#  postgres:
-#    image: postgres:16-alpine3.19
-#    ports:
-#      - "${POSTGRES_LOCAL_PORT}:5432"
-#    env_file:
-#      - .env
+  postgres:
+    image: postgres:16-alpine3.19
+    ports:
+      - "${DATABASE_LOCAL_PORT}:5432"
+    env_file:
+      - .env
 #
 #  mysql:
 #    image: mysql:8.0
 #    command: --default-authentication-plugin=mysql_native_password
 #    ports:
-#      - "${MYSQL_LOCAL_PORT}:3306"
+#      - "${DATABASE_LOCAL_PORT}:3306"
 #    env_file:
 #      - .env

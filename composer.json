@@ -16,7 +16,8 @@
         "php": "^8.2",
         "slim/slim": "^4.13",
         "openswoole/core": "22.1.4",
-        "peroxide/container": "^1.1"
+        "peroxide/container": "^1.1",
+        "robmorgan/phinx": "^0.16.0"
     },
     "require-dev": {
         "openswoole/ide-helper": "^22.1",
@@ -26,6 +27,9 @@
         "phpmd/phpmd": "^2.15"
     },
     "scripts": {
+        "phinx": "phinx",
+        "migrate": "phinx migrate",
+        "rollback": "phinx rollback",
         "test": "phpunit",
         "stan": "phpstan",
         "fix": "phpcbf -p --standard=PSR12 app/",
