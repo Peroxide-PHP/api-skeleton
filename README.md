@@ -11,7 +11,7 @@ $  docker run \
         -w /var/www \
         -v .:/var/www --rm \
          openswoole/swoole:php8.3-dev \
-         create-project peroxide/api-skeleton <your_project_dir>
+         composer create-project peroxide/api-skeleton <your_project_dir>
 ```
 
 Or
@@ -103,6 +103,7 @@ Container resolution follows the **PSR-11** standard, offering the flexibility t
 according to your preferences, you can even swap it out entirely if needed.
 
 ---
+
 #### Migrations
 We're offering a migration component called Phinx, which is a standalone library for implementing migrations without 
 being tied to any specific frameworks.
@@ -189,7 +190,7 @@ while MySQL with PDO is compatible (swoole handles communication for you).
 For Postgres, consider utilizing the Postgres Client instead. Be diligent in vetting any other communication methods 
 before implementation to preempt any unforeseen issues down the line.
 
-For more informations about blocking event loop please check the documents: https://openswoole.com/
+For more information about blocking event loop please check the documents: https://openswoole.com/
 
 # Suggestions or PR's
 Feel free to fork the project and submit a pull request to the develop branch. We welcome any suggestions or 
