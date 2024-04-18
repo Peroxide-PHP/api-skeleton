@@ -1,5 +1,6 @@
 # Peroxide: API-Skeleton
-API skeleton on top of Slim and OpenSwoole for microsservices projects focused on performance and simplicity
+API skeleton: Built on top of Slim and OpenSwoole, our API skeleton is designed for microservices projects, 
+prioritizing both performance and simplicity.
 
 # How to install
 Using *composer* to install the skeleton:
@@ -31,7 +32,8 @@ $ cp .env.example .env
 
 ---
 
-To start the local server, you'll need **Docker** and **Compose** up and running under your system user. No fancy commands needed, just make sure Docker and Compose are good to go.
+To start the local server, you'll need **Docker** and **Compose** up and running under your system user. No fancy 
+commands needed, just make sure Docker and Compose are good to go.
 
 To run as *docker compose*
 ```bash
@@ -87,7 +89,9 @@ https://www.slimframework.com/docs/v4/objects/routing.html
 
 Obs: All routes are managed by methods specified in the router configuration, which utilize callable classes with the 
 '__invoke' method, simple methods, or callable functions.
+
 ---
+
 #### Our Container
 We've developed our straightforward container component, named **peroxide/container**. With it, injecting dependencies 
 into your classes becomes a breeze: Controllers, UseCases, Commands, DTOs, and Domains in a declarative manner. 
@@ -173,6 +177,8 @@ Mess Detector
 ./exec composer md
 ```
 
+# Performance benchmarks
+Coming soon...
 
 # Attention!
 This skeleton server runs on the OpenSwoole runtime, enabling executions through coroutines. 
